@@ -3,7 +3,6 @@ import MovieList from "./pages/MovieList";
 import Filter from "./pages/Filter";
 import { moviesData } from "./utils/moviesData";
 
-
 const App = () => {
   // State to manage the list of movies
   const [movies, setMovies] = useState(moviesData);
@@ -39,16 +38,13 @@ const App = () => {
   };
 
   return (
-    <div className="flex align-center justify-center p-10 gap-10 bg-slate-400 h-grow">
+    <div className="align-center justify-center p-10 gap-10 bg-slate-400 h-grow lg:flex">
       <div>
         <h1 className="font-bold text-2xl text-red-600 mb-10">Movie List</h1>
         {/* Filter component for filtering movies */}
         <Filter onFilter={handleFilter} />
       </div>
 
-      {/* MovieList component to display the filtered list of movies */}
-      <MovieList movies={filteredMovies} />
-      {/* Button to add a new movie with movie */}
       <div>
         <button
           className="border-2 border-red-600 rounded-lg px-4 m-4"
@@ -64,6 +60,10 @@ const App = () => {
           Add Movie
         </button>
       </div>
+
+      {/* MovieList component to display the filtered list of movies */}
+      <MovieList movies={filteredMovies} />
+      {/* Button to add a new movie with movie */}
     </div>
   );
 };
